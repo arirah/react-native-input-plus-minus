@@ -1,0 +1,22 @@
+{
+  "name": "react-native-input-plus-minus",
+  "version": "1.0.0",
+  "description": "React native Minus(-) (Number) Plus(+) Component , Credits : https://github.com/yasaricli/react-native-counters",
+  "author": "Arifur Rahman",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arirah/react-native-input-plus-minus"
+  },
+  "keywords": [
+    "React",
+    "React-native",
+    "Minus",
+    "Plus",
+    "Mobile"
+  ],
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react-native-text": "^1.0.8"
+  }
+}
