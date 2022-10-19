@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, TextInput } from 'react-native';
 import PropTypes from 'prop-types';
 import ScalableText from 'react-native-text';
 
@@ -57,11 +57,8 @@ export default class Counter extends Component {
         />
 
         <View style={Styles.count}>
-          <ScalableText style={[Styles.countText, countTextStyle]}>
-            {count}
-          </ScalableText>
+          <TextInput style={Styles.textInput} defaultValue={String(count)} onChangeText={(e) => this.setState({ count: Number(e) })} />
         </View>
-
         <Button
           type="+"
           count={this.state.count}
@@ -82,7 +79,7 @@ Counter.propTypes = {
   min: PropTypes.number,
   max: PropTypes.number,
 
-  
+
   onChange: PropTypes.func,
   onChangeBefore: PropTypes.func,
 
