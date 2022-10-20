@@ -14,7 +14,6 @@ export default class Counter extends Component {
     super(props);
     this.state = {
       count: this.props.start,
-
       // onChangeBefore loading --> disabled.
       beforeLoading: false,
     };
@@ -36,15 +35,20 @@ export default class Counter extends Component {
 
   onChange(count, type) {
     const { onChange } = this.props;
-
     return this.setState({ count, beforeLoading: false }, () => {
       return onChange && onChange(count, type);
     });
   }
 
+  onChangeText(e,type) {
+    const { onChange } = this.props;
+    return this.setState({ e, beforeLoading: false,count:Number(e) }, () => {
+      return onChange && onChange(e, type);
+    });
+  }
+
   render() {
     const { count, beforeLoading } = this.state;
-    const { countTextStyle } = this.props;
 
     return (
       <View style={Styles.container}>
@@ -57,8 +61,12 @@ export default class Counter extends Component {
         />
 
         <View style={Styles.count}>
-          <TextInput style={Styles.textInput} defaultValue={String(count)} onChangeText={(e) => this.setState({ count: Number(e) })} />
+          <TextInput style={this.props.textInputStyle}
+            defaultValue={String(count)}
+            onChangeText={this.onChangeText.bind(this)}
+          />
         </View>
+
         <Button
           type="+"
           count={this.state.count}
