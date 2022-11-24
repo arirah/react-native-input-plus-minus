@@ -61,7 +61,7 @@ export default class Counter extends Component {
         />
 
         <View style={Styles.count}>
-          <TextInput keyboardType="number-pad" style={this.props.textInputStyle}
+          <TextInput keyboardType="numeric" style={this.props.textInputStyle}
             defaultValue={String(count)}
             onChangeText={this.onChangeText.bind(this)}
           />
